@@ -5,7 +5,9 @@ resource "random_id" "db_name_suffix" {
 resource "google_sql_database_instance" "boundary" {
   name             = "boundary-${random_id.db_name_suffix.hex}"
   database_version = "POSTGRES_12"
-  region           = var.region
+  region           = var.gcp_region
+  
+  deletion_protection = false
 
   settings {
     tier = "db-f1-micro"
@@ -32,6 +34,5 @@ resource "random_id" "boundary_psql_password" {
 resource "google_sql_user" "boundary_user" {
   name     = "boundary"
   instance = google_sql_database_instance.boundary.name
-  host     = google_sql_database_instance.boundary.ip_address.0.ip_address
   password = random_id.boundary_psql_password.hex
 }

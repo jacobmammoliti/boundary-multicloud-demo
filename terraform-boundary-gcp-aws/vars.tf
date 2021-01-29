@@ -3,16 +3,22 @@ variable "project" {
   description = "The project ID to host the compute nodes in (required)"
 }
 
-variable "region" {
+variable "gcp_region" {
   type        = string
   description = "The region to deploy the compute nodes in"
-  default     = "us-central1"
+  default     = "us-east1"
+}
+
+variable "aws_region" {
+  type        = string
+  description = "The region to deploy the compute nodes in"
+  default     = "us-east-1"
 }
 
 variable "zone" {
   type        = list(string)
   description = "The zones to deploy the compute nodes in"
-  default     = ["a", "c", "d", "f"]
+  default     = ["b", "c", "d"]
 }
 
 variable "machine_type" {
