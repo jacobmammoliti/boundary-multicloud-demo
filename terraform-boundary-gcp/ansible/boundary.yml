@@ -1,0 +1,4 @@
+- hosts: boundary_controllers,boundary_workers
+  become: yes
+  roles:
+    - role: boundary
