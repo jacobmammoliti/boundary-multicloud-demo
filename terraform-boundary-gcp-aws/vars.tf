@@ -1,4 +1,4 @@
-variable "project" {
+variable "gcp_project" {
   type        = string
   description = "The project ID to host the compute nodes in (required)"
 }
@@ -21,16 +21,27 @@ variable "zone" {
   default     = ["b", "c", "d"]
 }
 
-variable "machine_type" {
+variable "gcp_machine_type" {
   type        = string
   description = "The machine type to use for the compute nodes"
   default     = "n1-standard-1"
 }
 
-variable "network" {
+variable "aws_machine_type" {
+  type        = string
+  description = "The machine type to use for the compute nodes"
+  default     = "t2.medium"
+}
+
+variable "gcp_network" {
   type        = string
   description = "The machine type to use for the compute nodes"
   default     = "default"
+}
+
+variable "aws_vpc_id" {
+  type        = string
+  description = "The machine type to use for the compute nodes (required)"
 }
 
 variable "tags" {
@@ -61,4 +72,16 @@ variable "boundary_worker_count" {
   type        = number
   description = "The number of Boundary Workers instances to provision"
   default     = 1
+}
+
+variable "postgresql_version" {
+  type        = string
+  description = "The PostgreSQL version to use"
+  default     = "POSTGRES_12"
+}
+
+variable "postgresql_tier" {
+  type        = string
+  description = "The machine type to use for the PostgreSQL instance"
+  default     = "db-f1-micro"
 }

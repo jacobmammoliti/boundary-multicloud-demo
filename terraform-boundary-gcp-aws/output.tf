@@ -13,7 +13,7 @@ output "boundary_psql_password" {
 }
 
 resource "local_file" "ssh_private_key" {
-  content = tls_private_key.ssh_key.private_key_pem
-  filename = "id_rsa"
+  content         = tls_private_key.ssh_key.private_key_pem
+  filename        = "id_rsa"
   file_permission = "0400"
 }

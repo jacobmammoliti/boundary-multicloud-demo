@@ -1,2 +1,4 @@
 - name: boundary
   src: https://github.com/ansible-community/ansible-role-boundary.git
+  scm: git
+  version: v1.0.1
