@@ -2,7 +2,7 @@
 This repository contains the Terraform code to deploy the infrastructure for HashiCorp Boundary across Google Cloud Platform (GCP) and Amazon Web Services (AWS). 
 
 ## Architecture Diagram
-_coming soon_
+![boundary architecture](images/architecture.png "Boundary Architecture")
 
 ## Steps to Deploy
 ```bash

@@ -3,3 +3,4 @@ terraform.tfstate*
 terraform.tfvars
 inventory
 id_rsa
+.DS_Store
